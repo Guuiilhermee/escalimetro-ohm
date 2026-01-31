@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <title>Escalímetro | Lei de Ohm</title>
+</head>
+<body>
+    <header>
+        <a href="https://cursos.sesisenai.org.br/" target="_blank" class="logo-link"><img src="senai-logo.png" alt="logo" class="logo"></a>
+        <h1>Escalímetro e Lei de OHM</h1>
+    </header>
+    <main>
+
+        <!-- ESCALÍMETRO -->
+
+        <div class="campo">
+            <h2>Escalímetro</h2>
+            <div class="dados">
+                <label for="medida">Medida</label>
+                <input type="number" id="medida"><br>
+            </div>
+
+            <select name="" id="unidade">
+                <option value="mm">Milímetros</option>
+                <option value="cm">Centímetros</option>
+                <option value="dm">Decímetros</option>
+                <option value="metro">Metros</option>
+                <option value="km">Quilômetros</option>
+            </select><br>
+
+            <button id="calcular">Calcular</button><br>
+            <div id="resposta"></div>
+        </div>
+
+        <!-- LEI DE OHM -->
+
+        <div class="campo-dois">
+            <h2>Lei de Ohm</h2>
+
+            <div class="dados-dois">
+                <label for="tensao">Tensão</label>
+                <input type="number" id="tensao"><br>
+            </div>
+
+            <div class="dados-dois">
+                <label for="corrente">Corrente</label>
+                <input type="number" id="corrente"><br>
+            </div>
+
+            <div class="dados-dois">
+                <label for="resistencia">Resistência</label>
+                <input type="number" id="resistencia"><br>
+            </div>
+
+            <button id="calcdois">Calcular</button><br>
+            <div id="resdois"></div><br>
+
+            <div class="text-img">
+                <p>V = I x R <br> I = V / R <br> R = V / I</p>
+                <img src="leideohm.png" alt="imagem lei de ohm">
+            </div>
+        </div>
+        
+        <!-- TEXTOS -->
+
+        <div class="content">
+            <div class="content-wrapper-um">
+                <h3>O que é um Escalímetro?</h3>
+                <p>O escalímetro é uma ferramenta utilizada para trabalhar com medidas em escala, muito comum em áreas como engenharia, arquitetura e desenho técnico. Ele permite converter facilmente as medidas de um desenho para o tamanho real e vice-versa, facilitando a interpretação de projetos e evitando erros de cálculo. Com ele, é possível representar objetos grandes em tamanhos reduzidos de forma proporcional e precisa.</p>
+            </div>
+
+            <div class="content-wrapper-dois">
+                <h3>O que é a Lei de Ohm?</h3>
+                <p>A Lei de Ohm é um dos princípios fundamentais da eletrônica e estabelece a relação entre tensão, corrente e resistência em um circuito elétrico. Por meio da fórmula V = I × R e de suas variações, é possível calcular uma dessas grandezas quando se conhecem as outras duas. Essa lei é essencial para compreender o funcionamento de circuitos elétricos e para realizar cálculos básicos em eletrônica.</p>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>Feito por <a href="https://github.com/Guuiilhermee" target="_blank">Guilherme</a> &copy; 2026</p>
+    </footer>
+</body>
+</html>
