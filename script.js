@@ -127,25 +127,21 @@ calcdois.addEventListener('click', () => {
         return
     }
 
-    tensaoInput.style.color = ""
-    correnteInput.style.color = ""
-    resistenciaInput.style.color = ""
+    tensaoInput.value = r.tensao
+    correnteInput.value = r.corrente
+    resistenciaInput.value = r.resistencia
 
-    tensaoInput.value = r.tensao.toFixed(2)
-    correnteInput.value = r.corrente.toFixed(2)
-    resistenciaInput.value = r.resistencia.toFixed(2)
-
-    if (tensao === 0) {
-        tensaoInput.style.color = "#ff9c1a", tensaoInput.style.fontWeight = "bold"
-    } else if (corrente === 0) {
-        correnteInput.style.color = "red", correnteInput.style.fontWeight = "bold"
-    } else if (resistencia === 0) {
-        resistenciaInput.style.color = "green", resistenciaInput.style.fontWeight = "bold"
+    if(tensao === 0){
+        tensaoInput.value = r.tensao.toFixed(3)
+    }else if (corrente === 0){
+        correnteInput.value = r.corrente.toFixed(3)
+    }else if (resistencia === 0){
+        resistenciaInput.value = r.resistencia.toFixed(3)
     }
 
     resdois.innerHTML = `
-        <p>Tensão (V): ${r.tensao.toFixed(2)}</p>
-        <p>Corrente (I): ${r.corrente.toFixed(2)}</p>
-        <p>Resistência (R): ${r.resistencia.toFixed(2)}</p>
+        <p>Tensão (V): ${tensao === 0 ? r.tensao.toFixed(3) : r.tensao}</p>
+        <p>Corrente (I): ${corrente === 0 ? r.corrente.toFixed(3) : r.corrente}</p>
+        <p>Resistência (R): ${resistencia === 0 ? r.resistencia.toFixed(3) : r.resistencia}</p>
     `
 })
