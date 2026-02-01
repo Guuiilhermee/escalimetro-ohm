@@ -112,20 +112,40 @@ let calcdois = document.getElementById('calcdois')
 let resdois = document.getElementById('resdois')
 
 calcdois.addEventListener('click', () => {
-    let tensao = Number(document.getElementById('tensao').value)
-    let corrente = Number(document.getElementById('corrente').value)
-    let resistencia = Number(document.getElementById('resistencia').value)
+    let tensaoInput = document.getElementById('tensao')
+    let correnteInput = document.getElementById('corrente')
+    let resistenciaInput = document.getElementById('resistencia')
+
+    let tensao = Number(tensaoInput.value)
+    let corrente = Number(correnteInput.value)
+    let resistencia = Number(resistenciaInput.value)
 
     let r = leiDeOhm(tensao, corrente, resistencia)
 
-    if (!r) {
+    if (!r || r === "Indefinido") {
         resdois.innerHTML = `<p>Preencha exatamente DOIS campos</p>`
         return
     }
 
+    tensaoInput.style.color = ""
+    correnteInput.style.color = ""
+    resistenciaInput.style.color = ""
+
+    tensaoInput.value = r.tensao.toFixed(2)
+    correnteInput.value = r.corrente.toFixed(2)
+    resistenciaInput.value = r.resistencia.toFixed(2)
+
+    if (tensao === 0) {
+        tensaoInput.style.color = "#ff9c1a", tensaoInput.style.fontWeight = "bold"
+    } else if (corrente === 0) {
+        correnteInput.style.color = "red", correnteInput.style.fontWeight = "bold"
+    } else if (resistencia === 0) {
+        resistenciaInput.style.color = "green", resistenciaInput.style.fontWeight = "bold"
+    }
+
     resdois.innerHTML = `
-        <p>Tensão (V): ${r.tensao}</p>
-        <p>Corrente (I): ${r.corrente}</p>
-        <p>Resistência (R): ${r.resistencia}</p>
+        <p>Tensão (V): ${r.tensao.toFixed(2)}</p>
+        <p>Corrente (I): ${r.corrente.toFixed(2)}</p>
+        <p>Resistência (R): ${r.resistencia.toFixed(2)}</p>
     `
 })
