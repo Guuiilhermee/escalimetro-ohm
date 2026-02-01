@@ -176,15 +176,17 @@ footer{
 }
 
 @media (max-width: 600px){
-
     header{
         display: flex;
         align-items: center;
-        justify-content: space-between;
+        margin: 0;
+        padding: 0;
     }
     h1{
         font-size: 15px;
-        width: 100%;
+        margin: 0 0 0 50px;
+        padding: 0;
+        width: 200px;
     }
     .logo{
         width: 100px;
